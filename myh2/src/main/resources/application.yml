@@ -1,0 +1,24 @@
+server:
+  port: 8000
+
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:myh2db
+    username: sa
+    password: sa
+    platform: h2
+    schema: classpath:/db/schema-h2.sql
+    data: classpath:/db/data-h2.sql
+    driver-class-name: org.h2.Driver
+    initialize: true
+  h2:
+    console:
+      enabled: true
+      path: /myh2-console
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.example.demo.myh2.entity
+
+debug: true
